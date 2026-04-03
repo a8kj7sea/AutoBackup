@@ -1,0 +1,39 @@
+# --- BackupSystem Configuration ---
+
+# Time between automatic backups.
+# Supports time units: s (seconds), m (minutes), h (hours).
+# Examples: "30s", "15m", "1h", "2h"
+interval: "5m"
+
+# Compression level (0-9).
+# 0 = No compression (Fastest, largest file size)
+# 1-3 = Fast, low compression
+# 4-6 = Balanced (Recommended for 1.8.8 servers)
+# 7-9 = High compression (Slow, heavy CPU usage)
+compression-level: 5
+
+# Maximum number of backup files to retain per world.
+# Older backups will be automatically deleted (pruned).
+max-backups-per-world: 5
+
+# If true, the system will attempt to backup every world currently loaded.
+backup-all-worlds: true
+
+# This list is only used if 'backup-all-worlds' is set to false.
+worlds:
+  - world
+  - world_nether
+  - world_the_end
+
+# List of file names or extensions to skip during the backup process.
+# Keeps the backup clean and prevents "File in use" errors.
+exclude:
+  - "session.lock"
+  - "uid.dat"
+  - "*.tmp"
+
+# Enable detailed logs in the console (Start time, File count, etc.)
+verbose-logging: true
+
+# Send a success message to all online operators/admins when a backup finishes.
+notify-admins-on-completion: true
