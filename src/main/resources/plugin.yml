@@ -1,0 +1,17 @@
+name: BackupSystem
+version: 1.0.0
+main: me.a8kj.world.backup.BackupPlugin
+author: a8kj
+api-version: 1.8
+description: A high-performance, async world backup system.
+
+commands:
+  backup:
+    description: Main command for the backup system.
+    usage: /backup <now|reload>
+    permission: backup.admin
+
+permissions:
+  backup.admin:
+    description: Allows full access to the backup system.
+    default: op
